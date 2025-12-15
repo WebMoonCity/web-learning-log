@@ -141,12 +141,16 @@
 
 ## 공부 내용을 일일히 정리하니 너무 진이 빠져, 간략히 배운 것들만 써놔야겠다.
 
+## 3.7 표 만들기
+- 표(table), 행(row), 열(column), 행과 열이 만나는 셀(cell)
+- tr(table row), th(table header), td(table data)
+- rowspan, colspan, thead, tfoot, tbody
+- col, colroup, row, rowgruop
 
-
-
-
-
-
+## 3.8 멀티미디어 설정하기
+- audio 태그
+- video 태그
+- source 태그
 
 
 
