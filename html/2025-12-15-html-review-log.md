@@ -11,6 +11,7 @@
 - 형식
   ```html
   <form action="서버 url" method="get or post"></form>
+  ```
 - action 속성 : 폼 요소에서 사용자와 삭호작용으로 입력받은 값들을 전송할 서버의 URL 주소를 적음
 - method 속성 : 입력받은 값을 서버에 전송할 때 송신 방식을 적음. get 또는 post를 사용. 보안이 요구되면 정보는 post, 아니라면 get.
 
@@ -19,6 +20,7 @@
 - 형식
   ```html
   <input type="종류" name="이름" value="초깃값">
+  ```
 - type 속성 : 입력된 값에 따라 상호작용 요소의 종류를 결정
 - name 속성 : 입력 요소의 이름을 작성. 입력 요소가 form 태그에 의해 서버로 전송될 때, name 속성에 적힌 값이 이름으로 지정.
 - value 속성 : 입력 요소의 초깃값을 작성
@@ -33,16 +35,19 @@
     아이디
     <input type="text"> -> 상호작용 요소
   </label>
+  ```
 - 명시적인 방법 : label 태그의 for 속성과 상호작용 요소의 id 속성을 같은 값으로 설정하는 방법
   ```html
   <label for="userpw">password</label>
   <input type="password" id="userpw">
+  ```
 - 예외적으로 암묵적인 방법과 명시적인 방법을 함께 사용 가능
   ```html
   <label for="username">
   이름
   <input type="text" id="username">
   </label>
+  ```
 
 ### fieldset와 lengend 태그
 
@@ -74,6 +79,7 @@
       </p>
     </fieldset>
   </form>
+  ```
 
 ### textarea 태그
 
@@ -81,6 +87,7 @@
 - 형식
   ```html
   <textarea>초깃값</textarea>
+  ```
 - textarea 태그는 닫는 태그가 있음. 콘텐츠 영역에 초깃값을 정의.
 
 ### select, option, optgroup 태그
@@ -95,6 +102,7 @@
       <option value="서버에 전송할 값">웹 브라우저에 표시할 값</option>
     </optgroup>
   </select>
+  ```
 - 속성을 생략하면, option 태그의 콘텐츠로 적은 텍스트가 값으로 전송
 - optgroup 태그로 항목들을 그룹 지을 때 반드시 label 속성으로 그룹명을 지정.
 - size 속성 : 콤보박스에서 화면에 노출되는 항목 개수를 지정하는 속성. 생략할 경우 기본 1개 항목 표시.
@@ -106,6 +114,7 @@
 - 형식
   ```html
   <button type="종류">버튼 내용</button>
+  ```
 - type 속성값은 폼을 서버에 전송할 목적이면 submit, 상호작용 요서에 입력된 내용을 초기화하는 버튼이면 reset, 단순한 버튼이면 button으로 지정.
 - input 태그로 생성한 버튼 vs button 태그로 생성한 버튼
   - button 태그는 시작 태그와 종료 태그가 있어서 콘텐츠를 작성할 수 있음.
@@ -120,6 +129,7 @@
   - 형식
     ```html
     <태그 maxlength="숫자">
+    ```
 - checked 속성 : 요소를 선택된 상태로 표시
 - placeholder 속성 : 입력 요소에 어떠한 값을 입력하면 되는지 힌트를 적는 용도로 사용.
   - 형식
