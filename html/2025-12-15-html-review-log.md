@@ -125,6 +125,7 @@
   - 형식
     ```html
     <input placeholder="입력값에 대한 힌트">
+    ```
 
 
 
