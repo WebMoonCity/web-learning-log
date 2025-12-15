@@ -152,6 +152,13 @@
 - video 태그
 - source 태그
 
+## 3.9 시맨틱 태그
+- sementic 뜻 : 의미론적
+- 시맨틱 태그 : header, nav, section, article, asdie,footer, main
+
+## 3.10 글로벌 속성(global attribute)
+- class, id, style, title,lang
+- data-* 속성은 사용자 커스텀 속성을 만듬.
 
 
 
