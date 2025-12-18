@@ -17,7 +17,7 @@
 
 - position, float, clear
 - position : static이 기본값
-* position이 relative일 때는 기준점이 ***요소의 윈쪽 위 모서리***, absolute일 때는 ***웹 브루우저의 왼쪽 위 모서리***
+* position이 relative일 때는 기준점이 ***요소의 윈쪽 위 모서리***, absolute일 때는 ***웹 브라우저의 왼쪽 위 모서리***
 * float 속성을 적용하면 해당 자식 요소를 부모 요소가 제대로 인식하지 못함.
 * clear 속성은 float 속성이 마지막으로 적용된 요소 다음에 사용함.
 
