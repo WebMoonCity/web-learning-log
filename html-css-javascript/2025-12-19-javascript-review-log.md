@@ -20,7 +20,7 @@
   /* abc */
   ```
 - JavaScript
-- ```
+- ```javascript
   // abc
   /*
     abc
