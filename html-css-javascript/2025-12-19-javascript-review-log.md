@@ -15,9 +15,14 @@
 - external script
 - 형식
 - ```html
-  <script src="script.js"></script> 
+  <script src="script.js"></script>
+
+* script 태그 사용 위치 : script 태그는 항상 body 태그의 종료 태그 바로 전에 사용.
 
 ## 8.2 프로그래밍 시작 전 알아 두기
+
+* compile 방식 vs interpreter 방식
+- javascript는 인터프리터 방식
 
 - 주석
 - html
