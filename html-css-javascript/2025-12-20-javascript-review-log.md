@@ -26,3 +26,18 @@
 ---
 
 ## 9.2 자료형.
+
+- 자료형(data type)
+- 기본(primitive) 자료형 : string, number, boolean, undefined, null, Symbol
+- 참조(reference) 자료형 : object
+- 역슬래시(\)를 붙여 이스케이프 문자로 사용.
+- 템플릿 문자열 : 백틱(`)으로 문자열을 정의하는 방법<br>
+  1) Enter을 눌렀을 때 줄 바꿈이 적용됨.
+  2) ${} 문법을 이용해 문자열에 변수 또는 식을 넣을 수 있음.
+- 숫자형, 논리형, undefined, null, 객체
+- undefined와 null : 특수 자료형
+- 객체(object) : 기본 자료형을 제외하고 JavaScript에서 거의 모든 데이터와 자료구조는 객체. 객체 자료형에서 파생되는 자료형으로 배열(array), 객체 리처럴, 함수가 있음.
+- 객체 리터럴 : 객체를 젖ㅇ의하는 가장 간단한 방법
+- key + value : property
+
+---
