@@ -73,3 +73,56 @@
 
 * break 문 : 어떤 반복문이라도 break 문을 만나면, 반복문 종료.
 * continue 문 : 반복문을 건너뛰고 실행하라는 명령.
+
+---
+
+아직 selfcheck 1, 2, 3 남음.
+
+## selfcheck
+
+### selfcheck 01
+- ```javascript
+  let num = 0;
+  for(i=1; i<=999; i++){
+    if(i%2 === 0){
+        num++;
+    }
+  }
+  console.log(num);
+  ```
+
+### selfcheck 02
+- ```javascript
+  for(i=1;i<=9;i++){
+    for(k=1;k<=9;k++){
+        console.log(`${i} x ${k} = ${i*k}`);
+    }
+  }
+  ```
+
+### selfcheck 03
+- 100부터 999까지 정수 중 암스트롱 수에 해당하는 숫자를 모두 출력
+- 암스트롱 수란? 세 자리의 정수 중 각 자리의 수를 세제곱한 수의 합과 자신이 같은 수.
+
+- 내 답
+  ```javascript
+  for(i=1; i<=9; i++){
+    for(k=0; k<=9; k++){
+        for(j=0; j<=9; j++){
+            if((i*100 + k*10 + j) === (i**3 + k**3 + j**3)) console.log(`${i}${k}${j}`);
+        }
+    }
+  }
+  ```
+  답지
+  ```javascript
+  for(i=1; i<=9; i++){
+    for(k=0; k<=9; k++){
+        for(j=0; j<=9; j++){
+            let sum = i**3 + k**3 + j**3
+            let currentNum = (i*100)+(k*10)+j
+            if(sum === currentNum) console.log(`${currentNum}`);
+        }
+    }
+  }
+  ```
