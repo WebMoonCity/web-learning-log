@@ -29,14 +29,14 @@
         break;
   }
   ```
-  - default 문은 생략해도 되지만,<br>
+- default 문은 생략해도 되지만,<br>
     switch 문에는 case 문과 default 문 중 하나 이상은 있어야 함.
 
-  ### if 문 vs switch 문
-  - 이 둘의 차이는 무엇일까?
-  - if 문은 조건에 식(statement)을 사용.
-  - switch 문은 조건에 값(value)을 사용.
-  - 따라서, 범위를 이용한 조건을 작성할 때는 if 문이 적합.
-  - 그러나 값이 하나일 때는 switch 문이 더 적합.
+### if 문 vs switch 문
+- 이 둘의 차이는 무엇일까?
+- if 문은 조건에 식(statement)을 사용.
+- switch 문은 조건에 값(value)을 사용.
+- 따라서, 범위를 이용한 조건을 작성할 때는 if 문이 적합.
+- 그러나 값이 하나일 때는 switch 문이 더 적합.
 
-  ---
+---
