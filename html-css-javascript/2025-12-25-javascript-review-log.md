@@ -19,31 +19,17 @@
 
 * 1분 퀴드
 - 2. 
-  ```javascript
-  function getArrayMaxNumber(arr){
-    let max = arr[0];
-    for(let i = 1; i < arr.length; i++){
-        if(arr[i] > max){
-            max = arr[i];
-        }
-    }
-    return max;
+-  오답 수정 후<br>
+```javascript
+function getArrayMaxNumber(arr){
+  let max = arr[0];
+  for(let i = 1; i < arr.length; i++){
+      if(arr[i] > max){
+          max = arr[i];
+      }
   }
-  const max = getArrayMaxNumber([10, 50, 30]);
-  console.log(max);
-  ```
-  <br>
-- 위 오답 수정 후<br>
-  ```javascript
-  function getArrayMaxNumber(arr){
-    let max = arr[0];
-    for(let i = 1; i < arr.length; i++){
-        if(arr[i] > max){
-            max = arr[i];
-        }
-    }
-    return max;
-  }
-  const max = getArrayMaxNumber([10, 50, 30, 63, 22]);
-  console.log(max);
-  ```
+  return max;
+}
+const max = getArrayMaxNumber([10, 50, 30, 63, 22]);
+console.log(max);
+```
