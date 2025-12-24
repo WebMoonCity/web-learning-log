@@ -33,3 +33,37 @@ function getArrayMaxNumber(arr){
 const max = getArrayMaxNumber([10, 50, 30, 63, 22]);
 console.log(max);
 ```
+
+---
+
+## 10.4, 함수의 특징 이해하기
+
+### scope
+- 'function scope' vs 'block scope'
+- 'global scope' vs 'local scope'
+- 전역 스코프(global scope)에 선언한 변수를 ***전역 변수***, 지역 스코프(local scope)에 선언한 변수를 ***지역 변수***라고 함.
+* 전역 스코프와 지역 스코프에 같은 식별자를 가지는 참조 대상이 있다면, 먼저 같은 지역 스코프의 식별자를 참조함. 그리고 같은 지역 스코프에서 참조할 식별자를 찾지 못할 때만 전역 스코프에서 찾음.
+
+### 함수 호이스팅
+- 호이스팅은 코드를 선언과 할당으로 분리해 선언부를 자신의 스코프 최상위로 끌어올리는 것을 말함.
+- let과 const 키워드로 선언한 변수에는 적용되지 않음.
+- 함수 선언문으로 정의된 함수는 호이스팅에서 선언부로 봄.
+- 함수 표현식과 화살표 함수 방식으로 정의된 함수는 let이나 const 키워드로 선언했다면 호이스팅 자체가 되지 않음.
+
+## 즉시 실행 함수 사용하기
+- 즉시 실행 함수(IIFE, Immediately Invoked Function Expression)
+- 함수를 정의하면서 동시에 실행까지 하는 함수.
+- 형식
+```javascript
+(function(){})();
+```
+- 예
+```javascript
+(function init(){
+    console.log("initialized!");
+})();
+```
+
+---
+
+selfchek
