@@ -33,7 +33,7 @@
   console.log(max);
   ```
   <br>
-  수정 후<br>
+- 위 오답 수정 후<br>
   ```javascript
   function getArrayMaxNumber(arr){
     let max = arr[0];
