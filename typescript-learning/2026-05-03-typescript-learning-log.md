@@ -1,5 +1,5 @@
 # TypeScript learning, Day 02 (실제: Day 02)
-Date : 2026-05-03 Saturday.
+Date : 2026-05-03 Sunday.
 
 ---
 
