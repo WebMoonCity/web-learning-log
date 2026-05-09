@@ -1,5 +1,5 @@
 # TypeScript learning, Day 07 (실제: Day 07)
-Date : 2026-05-08 Thursday.
+Date : 2026-05-08 Friday.
 
 ---
 
