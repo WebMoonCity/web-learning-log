@@ -11,8 +11,8 @@ Date : 2026-05-19 Tuesday.
 ---
 
 * 2026-05-19 화요일
-- 23:20 ~ 00:00 (00m)
-- 154 ~ 100쪽.
+- 23:20 ~ 24:22 (62m)
+- 154 ~ 159쪽.
 
 * 오늘은 잠깐이라도 공부하지만, 앞으로는 응집도 있게 속도를 내야겠다.
 
@@ -80,5 +80,23 @@ Date : 2026-05-19 Tuesday.
 | 일부 속성 제거 | Omit 사용 | Omit 사용 |
 | 일부 속성 선택 | Pick 사용 | Pick 사용 |
 | 조건에 따라 타입 결정 | 거의 안 씀 | T extends U ? A : B |
+
+- |: 파이프(pipe)라고 부름. TypeScript에서는 |가 유니온 타입(union type)을 만들 때 쓰임.
+
+### 5.4 최하위 타입 undefined
+
+* undefined는 값이면서 타입으로 쓸 수 있음.
+* **undefined 타입이 모든 타입의 하위 타입인 것은 타입스크립트 코딩을 할 때 반드시 이해해야 하는 개념.**
+* 데이터가 undefined인 경우를 대비해서 분기 처리를 하고, 기본값을 채워주는 로직이 있다면 좋음.(데이터 분석 등 작업에서 null 값이 있는 것은 좋지 않음.)
+
+- undefined: 보통 값이 아직 할당되지 않았다는 뜻
+- null: 개발자가 의도적으로 넣는 빈 값.
+
+- ?? : null 병합 연산자.
+- value ?? defaultValue: value가 null 또는 undefined이면 defaultValue를 사용함.
+- undefined는 null과 같은 값은 아님.
+
+- ==는 느슨한 비교. loose equality 또는 abstract equality. 타입을 자동 변환해서 비교.
+- ===는 엄격한 비교. strict equality. 타입과 값을 모두 비교.
 
 ---
