@@ -1,5 +1,5 @@
 # TypeScript learning, Day 22 (실제: Day 13)
-Date : 2026-05-23 Tuesday.
+Date : 2026-05-23 Saturday.
 
 ---
 
