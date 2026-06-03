@@ -45,3 +45,11 @@ Date : 2026-06-03 Wednesday.
     - (ex) `props.title ?? "Living room Sofa"`: props.title이 null 또는 undefined이면 "Living room Sofa"를 사용한다.
 
 ---
+
+* 2026-06-03 수요일
+- 23:07 ~ 23:30 (23m)
+- 193 ~ 194쪽.
+
+#### 6.2.3 상세 페이지
+
+---
