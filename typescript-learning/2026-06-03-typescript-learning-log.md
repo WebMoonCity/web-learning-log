@@ -38,5 +38,10 @@ Date : 2026-06-03 Wednesday.
 #### 6.2.2 메인 페이지
 
 - 큰아버지 흉물과 친가와 어머니와 동생에 대한 분노가 올라왔다. 그러나 마음을 정렬하고 공부하려고 한다. 내가 정신적으로 경제적으로 학업적으로 강해질수록, 풀리지 않았던 문제는 해결하기 쉬워진다.
+* 분노를 공부의 이유로 바꾸자.
+
+- `??`: null 병합 연산자
+    - 앞에 것이 null 또는 undefined이면 뒤에 것(기본값)으로 넘어간다.
+    - (ex) `props.title ?? "Living room Sofa"`: props.title이 null 또는 undefined이면 "Living room Sofa"를 사용한다.
 
 ---
