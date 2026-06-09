@@ -8,11 +8,20 @@ datasource db {
 }
 
 model posts {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  title     String
+  subTitle  String
+  thumbnail String
+  content   String
+  createdAt DateTime @default(now())
+  authorId  String   @db.ObjectId
+
+  author users @relation(fields: [authorId], references: [id])
 }
 
 model users {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
-  name     String
-  password String
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  name     String  @unique @db.String
+  password String  @db.String
+  posts    posts[]
 }
