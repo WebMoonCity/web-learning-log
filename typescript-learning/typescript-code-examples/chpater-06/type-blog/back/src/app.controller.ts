@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Query, Param, Body, Req } from '@nestjs/common';
+import { Controller, Get, Post, Query, Param, Body, Req, HttpException } from '@nestjs/common';
 import { Request } from 'express';
 import { AppService } from './app.service';
 import { posts as PostEntity, users as UserEntity } from '@prisma/client';
@@ -64,5 +64,43 @@ export class AppController {
     const user = await this.appService.login(payload);
     req.session.user = user;
     return user;
+  }
+
+  @Get('/login')
+  async sessionLogin(
+    @Req()
+    req: Request & {
+      session: Record<
+        'user',
+        {
+          id: string;
+          name: string;
+          loginAt: Date;
+        }
+      >;
+    },
+  ) {
+    if (!req?.session?.user) {
+      throw new HttpException('login please', HttpStatus.UNAUTHORIZED);
+    }
+
+    return req?.session?.user;
+  }
+
+  @Delete('/login')
+  deleteSession(
+    @Req()
+    req: Request & {
+      session: Record<
+        'user',
+        {
+          id: string;
+          name: string;
+          loginAt: Date;
+        }
+      >;
+    },
+  ) {
+    req.session.destroy(function () {});
   }
 }
