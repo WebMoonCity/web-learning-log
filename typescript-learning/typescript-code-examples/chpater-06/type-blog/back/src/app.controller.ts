@@ -1,25 +1,10 @@
-import {
-  Body,
-  Controller,
-  Get,
-  Param,
-  Post,
-  Query,
-  Req,
-  UploadedFile,
-  UseInterceptors,
-} from '@nestjs/common';
+import { Controller, Get, Post, Query, Param, Body, Req } from '@nestjs/common';
+import { Request } from 'express';
 import { AppService } from './app.service';
 import { posts as PostEntity, users as UserEntity } from '@prisma/client';
-import { Request } from 'express';
+import { UploadedFile, UseInterceptors } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
-
-type SessionUser = {
-  id: string;
-  name: string;
-  loginAt: Date;
-};
 
 @Controller()
 export class AppController {
@@ -46,7 +31,7 @@ export class AppController {
       storage: diskStorage({
         destination: './images',
         filename: (req, file, callback) => {
-          callback(null, `${Date.now()}_${file.originalname}`);
+          callback(null, '${Date.now()}_${file.originalname}');
         },
       }),
       fileFilter: (req, file, callback) => {
@@ -66,7 +51,14 @@ export class AppController {
     @Body() payload: Omit<UserEntity, 'id'>,
     @Req()
     req: Request & {
-      session: { user: SessionUser };
+      session: Record<
+      'user',
+      {
+        id: string;
+        name: string;
+        loginAt: Date;
+      }
+      >;
     },
   ) {
     const user = await this.appService.login(payload);

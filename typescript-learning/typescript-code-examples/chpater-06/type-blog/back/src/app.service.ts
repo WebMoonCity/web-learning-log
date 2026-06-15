@@ -7,7 +7,7 @@ export class AppService {
   constructor(private readonly prisma: PrismaService) {}
 
   async getPostsWithPagination(page: number): Promise<{
-    posts: Array<Omit<PostEntity, 'content' | 'authorId'>>;
+    posts: Array<Omit<PostEntity, 'content'|'authorId'>>;
     currentPage: number;
     maxPage: number;
   }> {
@@ -52,7 +52,8 @@ export class AppService {
         },
       },
     });
-
+    
+    // 추가
     if (!post) {
       throw new HttpException('post not found', HttpStatus.NOT_FOUND);
     }
@@ -80,7 +81,7 @@ export class AppService {
     name: string;
     loginAt: Date;
   }> {
-    const user = await this.prisma.users.findUnique({
+    const user: UserEntity = await this.prisma.users.findUnique({
       where: {
         name: payload.name,
       },
