@@ -8,12 +8,27 @@ const PublishPage = () => {
     const [title, setTitle] = useState("");
     const [subTitle, setSubTitle] = useState("");
 
-    const onSubmit = () => {
-        axios.post("http://localhost:3000/post", {
+    const onSubmit = async (e) => {
+        e.preventDefault();
+
+        const {
+            data: { content, ...newPost },
+        }: {
+            id: string;
+            title: string;
+            subTitle: string;
+            thumbnail: string;
+            content: string;
+            createdAt: Date;
+            authorId: string;
+        } = axios.post("http://localhost:3000/post", {
             title,
             subTitle,
             content: editorRef.current.getContent({ format: "raw" }),
         });
+
+        setPosts(() => [newPost, ...posts]);
+        navigation('/detail/${newPost.id}');
     };
 
     function images_upload_handler(blobInfo, progress): Promise<string> {

@@ -62,17 +62,31 @@ export class AppService {
   }
 
   async savePost(
-    payload: Omit<PostEntity, 'id' | 'createdAt'>,
+    payload: Omit<PostEntity, 'id' | 'createdAt' | 'thumbnail'> & {
+      authorId: string;
+    },
   ): Promise<PostEntity> {
+    const regex = new RegExp(/img src="([^"]+)"/, 'g');
+    const images = payload.content.match(regex);
+    let thumbnail: string;
+
+    if (!images || !images?.length) {
+      // 기본으로 설정할 이미지
+      thumbnail = 'no image default image';
+    } else if (images.length > 0) {
+      thumbnail = images[0].slice(9, images[0].length - 1);
+    }
+
     const newPost = await this.prisma.posts.create({
       data: {
         title: payload.title,
         subTitle: payload.subTitle,
-        thumbnail: payload.thumbnail,
+        thumbnail,
         content: payload.content,
         authorId: payload.authorId,
       },
     });
+    
     return newPost;
   }
 

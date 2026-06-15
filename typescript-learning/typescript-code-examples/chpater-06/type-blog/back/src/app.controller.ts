@@ -1,4 +1,15 @@
-import { Controller, Get, Post, Query, Param, Body, Req, HttpException } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Query,
+  Param,
+  Body,
+  Req,
+  HttpException,
+  HttpStatus,
+  Delete,
+} from '@nestjs/common';
 import { Request } from 'express';
 import { AppService } from './app.service';
 import { posts as PostEntity, users as UserEntity } from '@prisma/client';
@@ -21,8 +32,19 @@ export class AppController {
   }
 
   @Post('/post')
-  savePost(@Body() payload: Omit<PostEntity, 'id' | 'createdAt'>) {
-    return this.appService.savePost(payload);
+  savePost(
+    @Body() payload: Pick<PostEntity, 'title' | 'subTitle' |'content'>,
+    @Req()
+    req: Request & { session: Record<'user', UserEntity & { loginAt: Date }> },
+  ) {
+    if (!req?.session?.user) {
+      throw new HttpException('please login', HttpStatus.FORBIDDEN);
+    }
+
+    return this.appService.savePost({
+      ...payload,
+      authorId: req.session.user.id,
+    });
   }
 
   @Post('/image')
@@ -31,7 +53,7 @@ export class AppController {
       storage: diskStorage({
         destination: './images',
         filename: (req, file, callback) => {
-          callback(null, '${Date.now()}_${file.originalname}');
+          callback(null, `${Date.now()}_${file.originalname}`);
         },
       }),
       fileFilter: (req, file, callback) => {
@@ -46,7 +68,7 @@ export class AppController {
     return file.filename;
   }
 
-  @Post('login')
+  @Post('/login')
   async login(
     @Body() payload: Omit<UserEntity, 'id'>,
     @Req()
