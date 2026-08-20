@@ -19,6 +19,8 @@ tags: []
 
 # YYYY-MM-DD
 
+> 항목별 설명과 완성된 작성 예시는 [_template-v02-example.md](_template-v02-example.md)를 참고한다.
+
 ## 기본 정보
 
 - 누적 실학습일: N일
