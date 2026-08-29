@@ -51,3 +51,21 @@ if let index {
 } else {
     print("index does not contain a value")
 }
+
+//:chapter 06, 스위프트 연산자와 표현식
+
+
+var myresult = 1 + 5 + 100
+ 
+print(myresult)
+
+
+let y = 3
+
+
+let x = 171
+let z = x ^ y
+print("Result is \(z)")
+
+let z02 = -x >> 1
+print("result is \(z02)")
