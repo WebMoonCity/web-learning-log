@@ -26,3 +26,28 @@ struct ExampleView: View {
 PlaygroundPage.current.setLiveView(ExampleView()
     .padding(100))
 //: [Next](@next)
+
+let myTuple = (10, 432.433, "This is a String")
+let myString = myTuple.2
+print(myString)
+
+let (myInt, myFloat, myString02) = myTuple
+print(myInt, myFloat)
+
+let myTuple02 = (count: 10, length: 432.433, message: "This is a String, man!")
+
+print(myTuple02.message)
+
+//:optional type
+
+var index: Int?
+
+index = 3
+
+var treeArray = ["Oak", "Pine", "Yew", "birch"]
+
+if let index {
+    print(treeArray[index])
+} else {
+    print("index does not contain a value")
+}
