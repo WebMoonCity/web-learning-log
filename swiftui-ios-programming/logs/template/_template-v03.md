@@ -1,5 +1,5 @@
 ---
-template_version: "03"
+template_version: "v03"
 date: YYYY-MM-DD
 book: swiftui-ios-programming
 study_day: null

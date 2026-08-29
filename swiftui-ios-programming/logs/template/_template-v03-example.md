@@ -21,7 +21,7 @@ v03은 **시간과 하루 요약만 고정하고, 세션 내용은 자유롭게 
 
 ````markdown
 ---
-template_version: "03"
+template_version: "v03"
 date: 2026-08-21
 book: swiftui-ios-programming
 study_day: 3
