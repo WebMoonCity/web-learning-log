@@ -69,3 +69,8 @@ print("Result is \(z)")
 
 let z02 = -x >> 1
 print("result is \(z02)")
+
+
+for index in 1...12 {
+    print("Value of Index is \(index)")
+}
