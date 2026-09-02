@@ -74,3 +74,12 @@ print("result is \(z02)")
 for index in 1...12 {
     print("Value of Index is \(index)")
 }
+
+var index_g = -1
+
+repeat {
+    print("hello")
+    index_g += 1
+} while index_g < 0
+
+print("\(index_g)")
